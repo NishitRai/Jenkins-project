@@ -41,6 +41,7 @@ pipeline {
                     sh '''
                     echo 'Push to Dockerhub Repo'
                     docker push nish536/todo-app:${BUILD_NUMBER}
+		    docker logout
                     '''
                 }
             }
