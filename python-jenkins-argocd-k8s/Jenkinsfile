@@ -20,6 +20,7 @@ pipeline {
             steps{
                 script{
                     sh '''
+		    cd Jenkins-project
                     echo 'Buid Docker Image'
                     docker build -t nish536/todo-app:${BUILD_NUMBER} .
                     '''
