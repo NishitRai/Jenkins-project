@@ -12,7 +12,7 @@ pipeline {
            steps {
                 git credentialsId: '4d7cdeb2-d39c-4d75-af23-ea1a6e59c603', 
                 url: 'https://github.com/NishitRai/Jenkins-project.git',
-                branch: 'main'
+                branch: 'test'
            }
         }
 
@@ -37,15 +37,15 @@ pipeline {
                 }
             }
         }
-        
-#        stage('Checkout K8S manifest SCM'){
-#            steps {
-#                git credentialsId: '4d7cdeb2-d39c-4d75-af23-ea1a6e59c603', 
-#                url: 'https://github.com/NishitRai/cicd-demo-manifests-repo.git',
-#                branch: 'main'
-#            }
-#        }
-        
+/*        
+        stage('Checkout K8S manifest SCM'){
+            steps {
+                git credentialsId: '4d7cdeb2-d39c-4d75-af23-ea1a6e59c603', 
+                url: 'https://github.com/NishitRai/cicd-demo-manifests-repo.git',
+                branch: 'main'
+            }
+        }
+*/        
         stage('Update K8S manifest & push to Repo'){
             steps {
                 script{
@@ -58,7 +58,8 @@ pipeline {
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
                         git remote -v
-                        git push https://github.com/iam-veeramalla/cicd-demo-manifests-repo.git HEAD:main
+			git push origin test
+#                        git push https://github.com/iam-veeramalla/cicd-demo-manifests-repo.git HEAD:test
                         '''                        
                     }
                 }
