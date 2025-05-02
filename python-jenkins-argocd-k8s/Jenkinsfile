@@ -68,7 +68,7 @@ pipeline {
   			git config --global user.name "Jenkins"
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
-                        git remote set-url origin https://$GIT_USER:$GIT_PASS@github.com/Jenkins-project.git
+                        git remote set-url origin https://$GIT_USER:$GIT_PASS@github.com/NishitRai/Jenkins-project.git
 			git remote -v
 			git push origin test
 #                        git push https://github.com/iam-veeramalla/cicd-demo-manifests-repo.git HEAD:test
