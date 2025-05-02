@@ -62,7 +62,8 @@ pipeline {
                         sh '''
 			cd python-jenkins-argocd-k8s/deploy/
                         cat deploy.yaml
-			sed -i "s/todo-app:.*$/todo-app:${BUILD_NUMBER}/g" deploy.yaml                        
+			sed -i "s/todo-app:.*$/todo-app:${BUILD_NUMBER}/g" deploy.yaml
+   			sed -i "s/todo-app:.*$/todo-app:${BUILD_NUMBER}/g" pod.yaml
                         cat deploy.yaml
 			git config --global user.email "Jenkins@example.com"
   			git config --global user.name "Jenkins"
