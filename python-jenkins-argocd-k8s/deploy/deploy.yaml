@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: nish536/todo-app:62
+        image: nish536/todo-app:63
         ports:
         - containerPort: 8000
